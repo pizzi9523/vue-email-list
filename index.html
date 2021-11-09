@@ -10,9 +10,10 @@
 
 <body>
     <div id="root">
-        <ul>
-            <li v-for="email in emails">{{email}}</li>
+        <ul v-if="!error">
+            <li v-show="emails.length == 10" v-for="email in emails">{{email}}</li>
         </ul>
+        <div v-else>{{error}}</div>
     </div>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js'
